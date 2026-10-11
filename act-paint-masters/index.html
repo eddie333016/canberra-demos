@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>ACT Paint Masters | Painters, Canberra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--ink:#16130f;--paper:#fbfaf7;--a:#1f6f5c;--b:#f0b429;--c:#d9553b;--d:#3b5ba5;--e:#e9e2d4;--mut:#625d55}
+*{box-sizing:border-box}body{margin:0;font:400 18px/1.6 'Instrument Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+.brand{font:800 22px/1 'Bricolage Grotesque';letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:12px}
+.btn.y{background:var(--b);color:var(--ink)}
+.sw{display:flex;height:14px}.sw i{flex:1}.sw i:nth-child(1){background:var(--a)}.sw i:nth-child(2){background:var(--b)}.sw i:nth-child(3){background:var(--c)}.sw i:nth-child(4){background:var(--d)}.sw i:nth-child(5){background:var(--e)}
+.hero{padding:70px 0 80px}
+h1{font:800 clamp(52px,8.4vw,128px)/.88 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 30px}
+h1 span{color:var(--a)}
+.hero .row{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+.hero p{font-size:21px;color:var(--mut);max-width:30em;margin:0}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:60px}
+.chip{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.05)}
+.chip i{display:block;height:130px}.chip div{padding:14px 16px}.chip b{font:600 18px/1.2 'Bricolage Grotesque';display:block}.chip small{color:var(--mut);font-size:14px}
+section{padding:90px 0}
+h2{font:800 clamp(40px,5.4vw,72px)/.92 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 30px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.why div{padding:30px 28px 0 0}.why b{font:800 54px/1 'Bricolage Grotesque';color:var(--c)}
+.why h3{font:600 24px/1.2 'Bricolage Grotesque';margin:10px 0 6px}.why p{margin:0;color:var(--mut)}
+.field{background:var(--a);color:#fff}
+.field .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}
+.field p{color:#cfe6de;font-size:20px}
+#map{height:440px;border-radius:20px;overflow:hidden}
+.hrs{display:inline-block;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:12px 18px;border-radius:12px;font-weight:600;margin:6px 0 24px}
+footer{color:var(--mut);font-size:14px;padding:28px 0 100px}
+.mbar{display:none}
+@media(max-width:860px){.hero{padding:40px 0 60px}.hero .row{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr;margin-top:40px}.chip i{height:80px}
+ .why{grid-template-columns:1fr}.why div{padding:24px 0;border-bottom:1px solid #ddd6c8}.field .grid{grid-template-columns:1fr}
+ section{padding:60px 0}#map{height:320px}header .btn{display:none}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px;background:var(--paper);box-shadow:0 -4px 16px rgba(0,0,0,.1);z-index:9}.mbar .btn{flex:1;text-align:center;font-size:18px}}
+</style></head><body>
+<div class="sw"><i></i><i></i><i></i><i></i><i></i></div>
+<header><div class="wrap"><div class="brand">ACT Paint Masters</div><a class="btn" href="tel:+61401044000">0401 044 000</a></div></header>
+<div class="hero"><div class="wrap">
+ <h1>Inside, outside, <span>done properly.</span></h1>
+ <div class="row"><p>House painting across Canberra, from a single room to the whole exterior, fences and roofs. Five stars from 29 Google reviews.</p><a class="btn y" href="tel:+61401044000" style="font-size:19px;padding:18px 28px">Call 0401 044 000</a></div>
+ <div class="chips">
+  <div class="chip"><i style="background:var(--a)"></i><div><b>Interiors</b><small>Walls, ceilings, trims</small></div></div>
+  <div class="chip"><i style="background:var(--b)"></i><div><b>Exteriors</b><small>Outside walls and trims</small></div></div>
+  <div class="chip"><i style="background:var(--c)"></i><div><b>Fences</b><small>Fence painting</small></div></div>
+  <div class="chip"><i style="background:var(--d)"></i><div><b>Roofs</b><small>Roof painting</small></div></div>
+  <div class="chip"><i style="background:var(--e)"></i><div><b>Commercial</b><small>Business premises</small></div></div>
+ </div>
+</div></div>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2>What customers mention</h2>
+ <div class="why">
+  <div><b>01</b><h3>Quick to reply</h3><p>Customers mention a fast reply and an easy quote.</p></div>
+  <div><b>02</b><h3>On time</h3><p>Arriving when agreed and finishing on schedule.</p></div>
+  <div><b>03</b><h3>A clean finish</h3><p>A high quality finish that customers are happy to recommend.</p></div>
+ </div>
+ <p style="color:var(--mut);font-size:15px;margin-top:26px">Summarised from customer reviews on hipages. <a href="https://www.google.com/maps/place/ACT+PAINT+MASTERS+PTY+LTD/data=!4m7!3m6!1s0xae8473dafa69903b:0x3e8b76f4e90dfac3!8m2!3d-35.2004859!4d149.1559387!16s%2Fg%2F11w9pzd83h!19sChIJO5Bp-tpzhK4Rw_oN6fR2iz4">See our 29 Google reviews</a>.</p>
+</div></section>
+
+<section class="field"><div class="wrap grid">
+ <div><h2>Painting all over Canberra</h2><p>Based in Gungahlin and working across the city. Call any day of the week.</p><div class="hrs">Every day, 7am to 7pm</div><br><a class="btn y" href="tel:+61401044000">Call 0401 044 000</a></div>
+ <div id="map" aria-label="Map of the Canberra service area"></div>
+</div></section>
+<footer><div class="wrap">ACT Paint Masters, Canberra<br>Demo built by Edward Bowman</div></footer>
+<div class="mbar"><a class="btn y" href="tel:+61401044000">Call 0401 044 000</a></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>sfMap('map',{lng:149.12,lat:-35.27,zoom:9.4,radiusKm:20,color:'#f0b429'});</script>
+</body></html>

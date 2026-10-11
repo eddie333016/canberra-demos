@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Bark Avengers | Mobile dog grooming, Canberra southside</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--blue:#2346d8;--deep:#142a8c;--sun:#ffd23f;--ink:#111a3a;--paper:#f4f6ff}
+*{box-sizing:border-box}body{margin:0;font:400 18px/1.55 Nunito,system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:inherit}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4em;background:var(--sun);color:var(--ink);font:800 19px/1 Nunito;text-decoration:none;padding:16px 26px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 0 #c9a100}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font:800 26px/1 'Baloo 2';color:#fff;display:flex;align-items:center;gap:10px}
+.logo i{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:var(--ink);font-style:normal;font-size:22px}
+.hero{background:var(--blue);color:#fff;border-radius:0 0 48px 48px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;padding:20px 0 0}
+.hero h1{font:800 clamp(48px,7vw,96px)/.9 'Baloo 2';margin:10px 0 18px;letter-spacing:-.01em}
+.hero h1 span{color:var(--sun)}
+.hero p{font-size:20px;color:#dfe5ff;max-width:28em;margin:0 0 28px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.dog{position:relative;align-self:stretch}
+.dog img{display:block;width:100%;height:560px;object-fit:cover;object-position:50% 40%;border-radius:280px 280px 0 0}
+.score{position:absolute;left:-70px;top:70px;background:#fff;color:var(--ink);border-radius:22px;padding:20px 24px;box-shadow:0 14px 34px rgba(10,20,80,.3);text-align:center;transform:rotate(-4deg)}
+.score b{display:block;font:800 64px/.9 'Baloo 2';color:var(--blue)}
+.score .st{color:#f2b300;letter-spacing:3px}
+.score small{display:block;font-weight:800;font-size:14px}
+section{padding:90px 0}
+h2{font:800 clamp(34px,4.4vw,56px)/1 'Baloo 2';margin:0 0 16px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.how div{background:#fff;border-radius:28px;padding:30px 26px;border:2px solid #e2e7ff}
+.how b{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;font:800 22px 'Baloo 2';margin-bottom:12px}
+.how h3{font:800 25px/1.1 'Baloo 2';margin:0 0 6px}.how p{margin:0;color:#4b5683}
+.tell{background:var(--sun);border-radius:40px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.tell ul{margin:0;padding:0;list-style:none;font-weight:800;font-size:21px}
+.tell li{padding:12px 0;border-bottom:2px dashed rgba(17,26,58,.25)}
+.area{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+#map{height:420px;border-radius:32px;overflow:hidden;border:4px solid #fff;box-shadow:0 10px 30px rgba(20,40,140,.15)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chips span{background:#fff;border:2px solid #e2e7ff;border-radius:999px;padding:6px 14px;font-weight:800;font-size:15px}
+.end{background:var(--deep);color:#fff;text-align:center;border-radius:48px 48px 0 0}
+.end p{color:#c8d1ff}
+footer{background:var(--deep);color:#9faae0;font-size:14px;padding:0 0 100px;text-align:center}
+.mbar{display:none}
+@media (max-width:860px){
+ nav .btn.ghost{padding:10px 14px;font-size:15px}.logo{font-size:21px}
+ .hero .grid{grid-template-columns:1fr}.hero .actions{margin-bottom:10px}
+ .dog img{height:420px}.score{left:16px;top:16px;padding:14px 18px}.score b{font-size:46px}
+ .how,.tell,.area{grid-template-columns:1fr}.tell{padding:34px 26px}
+ section{padding:60px 0}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px 12px;background:rgba(20,42,140,.96);z-index:9}.mbar .btn{flex:1}
+}
+</style></head>
+<body>
+<div class="hero"><div class="wrap">
+ <nav><div class="logo"><i>🐾</i>Bark Avengers</div><a class="btn ghost" href="tel:+61424096779">0424 096 779</a></nav>
+ <div class="grid">
+  <div><div style="font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:14px;color:var(--sun)">Mobile dog grooming, Canberra southside</div>
+   <h1>The groom comes <span>to your door.</span></h1>
+   <p>No car trip, no kennel wait, no shaking dog in the back seat. We pull up at your place, groom your dog, and hand them back fresh.</p>
+   <div class="actions"><a class="btn" href="tel:+61424096779">Call to book 0424 096 779</a><a class="btn ghost" href="sms:+61424096779">Send a text</a></div></div>
+  <div class="dog"><img src="img/p1.jpg" alt="A freshly groomed curly coated dog sitting outside a house">
+   <div class="score"><b>5.0</b><span class="st">★★★★★</span><small>134 Google reviews</small></div></div>
+ </div>
+</div></div>
+
+<section><div class="wrap">
+ <h2>How a mobile groom works</h2>
+ <div class="how">
+  <div><b>1</b><h3>Call or text</h3><p>Tell us about your dog and where you are, and we find a time that suits.</p></div>
+  <div><b>2</b><h3>We pull up</h3><p>The groom happens right outside your home. Your dog stays on familiar ground.</p></div>
+  <div><b>3</b><h3>Handed back fresh</h3><p>No pick up, no drop off. Your day carries on.</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="tell">
+ <div><h2>Booking? Have these handy.</h2><p style="margin:0">It helps us plan the right amount of time for your dog.</p></div>
+ <ul><li>Breed and rough size</li><li>Coat type and any knots</li><li>When they were last groomed</li><li>Your suburb</li></ul>
+</div></div></section>
+
+<section><div class="wrap area">
+ <div><h2>Southside Canberra</h2><p>Based in Kambah and grooming across Canberra's south. Not sure if we reach you? Ask when you call.</p>
+  <div class="chips"><span>Tuggeranong</span><span>Woden</span><span>Weston Creek</span><span>Kambah</span></div>
+  <p style="margin-top:22px"><a href="https://www.google.com/maps/place/Bark+Avengers+Mobile+Dog+Grooming/data=!4m7!3m6!1s0x4e15f3aa6cfe9ca5:0x6f53b1a6f6019aa5!8m2!3d-35.3960287!4d149.0704956!16s%2Fg%2F11mstdjs30!19sChIJpZz-bKrzFU4RpZoB9qaxU28" style="font-weight:800">Read our 134 Google reviews</a></p></div>
+ <div id="map" aria-label="Map of Canberra southside"></div>
+</div></section>
+
+<section class="end"><div class="wrap">
+ <h2>Ready for a fresh dog?</h2><p>Call or text and we will find a time.</p>
+ <a class="btn" href="tel:+61424096779">0424 096 779</a>
+</div></section>
+<footer>Bark Avengers Mobile Dog Grooming, Canberra<br>Demo built by Edward Bowman</footer>
+<div class="mbar"><a class="btn" href="tel:+61424096779">Call to book 0424 096 779</a></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>sfMap('map',{lng:149.075,lat:-35.385,zoom:10.3,radiusKm:9,color:'#2346d8'});</script>
+</body></html>

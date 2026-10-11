@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Jeffrey Tiling Service | Family run tiler, Canberra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--sl:#34506b;--sl2:#dfe6ed;--grout:#f7f8f9;--ink:#17222d;--mut:#5d6b78;--ln:#d3dbe3;--acc:#c8a46a}
+*{box-sizing:border-box}body{margin:0;font:400 18px/1.6 Figtree,system-ui,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit}.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+.brand{font:400 22px/1 'Young Serif'}
+.btn{display:inline-block;background:var(--sl);color:#fff;text-decoration:none;font-weight:700;padding:15px 24px;border-radius:10px}
+.btn.l{background:#fff;color:var(--sl);box-shadow:inset 0 0 0 2px var(--sl)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:50px 0 90px}
+h1{font:400 clamp(46px,6.2vw,86px)/1.02 'Young Serif';letter-spacing:-.02em;margin:0 0 24px}
+.hero p{font-size:20px;color:var(--mut);max-width:30em;margin:0 0 30px}
+.rb{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.rb div{border:1px solid var(--ln);border-radius:14px;padding:14px 18px}
+.rb b{font:400 30px/1 'Young Serif';display:block}.rb small{color:var(--mut);font-size:14px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--grout);padding:6px;border-radius:18px;aspect-ratio:1;transform:rotate(-3deg)}
+.tiles i{border-radius:6px;background:var(--sl)}
+.tiles i:nth-child(3n){background:var(--sl2)}.tiles i:nth-child(5n){background:#5c7893}.tiles i:nth-child(7n){background:var(--acc)}
+section{padding:90px 0}
+h2{font:400 clamp(36px,4.4vw,56px)/1.05 'Young Serif';margin:0 0 30px;letter-spacing:-.01em}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid4 div{background:var(--grout);border-radius:16px;padding:28px 22px;border-top:6px solid var(--sl)}
+.grid4 h3{font:700 21px/1.2 Figtree;margin:0 0 6px}.grid4 p{margin:0;color:var(--mut);font-size:16px}
+.about{background:var(--sl);color:#fff;border-radius:28px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.about p{color:#d6e0ea;margin:0 0 14px}
+.facts{list-style:none;padding:0;margin:0}.facts li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:20px}.facts li b{font:400 28px 'Young Serif';margin-right:10px;color:var(--acc)}
+.area{display:grid;grid-template-columns:1fr 1.3fr;gap:46px;align-items:center}
+#map{height:420px;border-radius:20px;overflow:hidden}
+footer{border-top:1px solid var(--ln);color:var(--mut);font-size:14px;padding:28px 0 100px}
+.mbar{display:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:30px;padding:24px 0 60px}.tiles{width:70%;margin:0 auto;order:-1}
+ .grid4{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;padding:34px 24px;gap:20px}.area{grid-template-columns:1fr}
+ section{padding:60px 0}#map{height:320px}header .btn{display:none}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px;background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.1);z-index:9}.mbar .btn{flex:1;text-align:center;font-size:18px}}
+@media(max-width:480px){.grid4{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="wrap"><div class="brand">Jeffrey Tiling Service</div><a class="btn" href="tel:+61435619345">0435 619 345</a></div></header>
+<div class="wrap"><div class="hero">
+ <div><h1>Tiling done neatly, by a family business.</h1>
+  <p>Kitchens, bathrooms, floors and walls across Canberra. Jeff is a qualified tiler with more than 15 years on the tools.</p>
+  <a class="btn" href="tel:+61435619345">Call Jeff 0435 619 345</a>
+  <div class="rb"><div><b>5.0</b><small>31 Google reviews</small></div><div><b>5.0</b><small>91 hipages ratings</small></div><div><b>15+</b><small>years tiling</small></div></div></div>
+ <div class="tiles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div></div>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2>What we tile</h2>
+ <div class="grid4">
+  <div><h3>Bathrooms</h3><p>Floors, walls and showers for renovations and refreshes.</p></div>
+  <div><h3>Kitchens</h3><p>Splashbacks and kitchen floors.</p></div>
+  <div><h3>Floors</h3><p>Living areas, hallways and laundries.</p></div>
+  <div><h3>Walls</h3><p>Feature walls and wet area walls.</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="about">
+ <div><h2 style="color:#fff">A family run business</h2><p>When you call, you talk to the tiler who does the work. Tell Jeff about the room and he will talk you through it.</p><a class="btn l" href="tel:+61435619345">Call 0435 619 345</a></div>
+ <ul class="facts"><li><b>Cert III</b>qualified tiler</li><li><b>15+</b>years experience</li><li><b>7am to 6pm</b>on weekdays</li></ul>
+</div></div></section>
+
+<section><div class="wrap area">
+ <div><h2>Across Canberra</h2><p style="color:var(--mut)">Based in Holt and working across the city. Five stars from 31 Google reviews and 91 hipages ratings.</p><a class="btn l" href="https://www.google.com/maps/place/Jeffrey+Tiling+Service/data=!4m7!3m6!1s0x6b17af114110dabd:0x34af80c6d98299d!8m2!3d-35.308065!4d149.2693366!16s%2Fg%2F11mvshk2sz!19sChIJvdoQQRGvF2sRnSmYbQz4SgM">Read the Google reviews</a></div>
+ <div id="map" aria-label="Map of the Canberra service area"></div>
+</div></section>
+<footer><div class="wrap">Jeffrey Tiling Service, Canberra<br>Demo built by Edward Bowman</div></footer>
+<div class="mbar"><a class="btn" href="tel:+61435619345">Call Jeff 0435 619 345</a></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>sfMap('map',{lng:149.1,lat:-35.3,zoom:9.4,radiusKm:20,color:'#34506b'});</script>
+</body></html>

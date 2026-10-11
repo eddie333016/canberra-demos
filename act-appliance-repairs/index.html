@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>ACT Appliance Repairs | Washers, ovens and dishwashers repaired</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;800&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--steel:#2f3a45;--red:#e03a2f;--bg:#f3f4f5;--ln:#c9ced3;--mut:#5f6b76}
+*{box-sizing:border-box}body{margin:0;font:400 18px/1.6 Chivo,system-ui,sans-serif;color:var(--steel);background:var(--bg)}
+a{color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.mono{font-family:'Chivo Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--ln)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font:800 18px/1 Chivo;letter-spacing:.02em}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:600 16px/1 Chivo;padding:14px 20px;border-radius:2px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;padding:64px 0 80px;align-items:center}
+h1{font:800 clamp(44px,6.4vw,92px)/.95 Chivo;letter-spacing:-.035em;margin:18px 0 22px}
+h1 span{color:var(--red)}
+.hero p{font-size:20px;color:var(--mut);max-width:28em;margin:0 0 28px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}.duo img{width:100%;height:420px;object-fit:cover;display:block}.duo img+img{margin-top:60px}
+.blk{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:72px 0;border-top:1px solid var(--ln)}
+.lab{position:sticky;top:96px;align-self:start}
+.lab h2{font:800 34px/1.05 Chivo;letter-spacing:-.02em;margin:10px 0 0}
+.items{border-top:1px solid var(--steel)}
+.it{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--ln)}
+.it h3{font:600 23px/1.25 Chivo;margin:0}.it p{margin:0;color:var(--mut)}
+.sub{display:flex;flex-wrap:wrap;gap:8px}.sub span{border:1px solid var(--steel);padding:8px 14px;font:500 15px 'Chivo Mono'}
+#map{height:400px;margin-top:26px;border:1px solid var(--steel)}
+.score{display:flex;align-items:baseline;gap:20px}.score b{font:800 120px/.8 Chivo;letter-spacing:-.05em;color:var(--red)}
+footer{background:var(--steel);color:#b9c2ca;font-size:14px;padding:28px 0 100px}
+.mbar{display:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:36px 0 50px}.duo img{height:240px}.duo img+img{margin-top:30px}
+ .blk{grid-template-columns:1fr;gap:18px;padding:50px 0}.lab{position:static}.it{grid-template-columns:1fr;gap:4px}
+ #map{height:300px}.score b{font-size:84px}header .btn{display:none}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px;background:var(--steel);z-index:9}.mbar .btn{flex:1;text-align:center;font-size:18px;padding:16px}}
+</style></head><body>
+<header><div class="wrap"><div class="brand">ACT APPLIANCE REPAIRS</div><a class="btn" href="tel:+61421086084">Call 0421 086 084</a></div></header>
+<div class="wrap">
+ <div class="hero"><div><div class="mono">Canberra and Queanbeyan</div>
+  <h1>Washer stopped? Oven <span>cold?</span></h1>
+  <p>Before you buy a new one, get it looked at. We repair washing machines, ovens and dishwashers at your home.</p>
+  <a class="btn" href="tel:+61421086084" style="font-size:18px;padding:16px 24px">Call 0421 086 084</a>
+  <p class="mono" style="margin-top:18px;font-size:12px">Weekdays 8am to 5pm</p></div>
+  <div class="duo"><img src="img/p1.jpg" alt="A built in oven in a home kitchen"><img src="img/p2.jpg" alt="A front loading washing machine"></div></div>
+
+ <div class="blk"><div class="lab"><div class="mono">01</div><h2>What we repair</h2></div>
+  <div class="items">
+   <div class="it"><h3>Washing machines</h3><p>Not spinning, not draining, leaking or stopping mid cycle.</p></div>
+   <div class="it"><h3>Ovens</h3><p>Not heating, uneven cooking or a fault you can't pin down.</p></div>
+   <div class="it"><h3>Dishwashers</h3><p>Not draining, not cleaning or showing an error.</p></div>
+   <div class="it"><h3>Something else?</h3><p>Call and tell us the make and the problem. We will tell you straight if we can help.</p></div>
+  </div></div>
+
+ <div class="blk"><div class="lab"><div class="mono">02</div><h2>Where we go</h2></div>
+  <div><div class="sub"><span>Canberra</span><span>Queanbeyan</span><span>Sutton</span><span>Royalla</span><span>Michelago</span></div>
+  <div id="map" aria-label="Map of the service area from Sutton to Michelago"></div></div></div>
+
+ <div class="blk"><div class="lab"><div class="mono">03</div><h2>What customers say</h2></div>
+  <div class="score"><b>4.9</b><div>from 57 Google reviews<br><a href="https://www.google.com/maps/place/ACT+APPLIANCE+REPAIRS/data=!4m7!3m6!1s0x6b164b423ed3b4eb:0xfb8e2086de4a098e!8m2!3d-35.522473!4d149.0810386!16s%2Fg%2F11fdynm96g!19sChIJ67TTPkJLFmsRjglK3oYgjvs" style="font-weight:600">Read them on Google</a></div></div></div>
+
+ <div class="blk"><div class="lab"><div class="mono">04</div><h2>Book a repair</h2></div>
+  <div><p style="font-size:22px;margin:0 0 20px;max-width:26em">Have the make and model handy, and a rough idea of what it is doing. Call between 8am and 5pm on weekdays.</p><a class="btn" href="tel:+61421086084" style="font-size:18px;padding:16px 24px">Call 0421 086 084</a></div></div>
+</div>
+<footer><div class="wrap">ACT Appliance Repairs, Canberra<br>Demo built by Edward Bowman</div></footer>
+<div class="mbar"><a class="btn" href="tel:+61421086084">Call 0421 086 084</a></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>sfMap('map',{lng:149.17,lat:-35.44,zoom:8.6,radiusKm:32,color:'#e03a2f'});</script>
+</body></html>

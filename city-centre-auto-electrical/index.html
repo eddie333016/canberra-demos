@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>City Centre Auto Electrical | Queanbeyan and Canberra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--el:#0a5cff;--volt:#c8ff2e;--ink:#0b1220;--mut:#5a6476;--ln:#dfe4ee}
+*{box-sizing:border-box}body{margin:0;font:400 17px/1.6 'Work Sans',system-ui,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--el);color:#fff;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:4px}
+.btn.v{background:var(--volt);color:var(--ink)}
+.hero{position:relative;height:720px;background:#e8ecf3}
+#map{position:absolute;inset:0}
+.card{position:absolute;left:max(24px,calc((100vw - 1180px)/2 + 24px));top:50%;transform:translateY(-50%);width:440px;background:var(--ink);color:#fff;padding:36px;border-radius:6px;z-index:2;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.card .k{font:600 13px/1 'Work Sans';letter-spacing:.18em;text-transform:uppercase;color:var(--volt)}
+h1{font:800 clamp(44px,5vw,66px)/.92 'Saira Condensed';text-transform:uppercase;margin:16px 0 14px}
+.card p{color:#b8c1d3;margin:0 0 22px}
+.addr{border-top:1px solid #263047;padding-top:18px;margin-top:22px;font-size:15px;color:#d5dbe7;display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
+.addr b{color:var(--volt);font-weight:600}
+.brand{position:absolute;top:22px;right:24px;z-index:2;background:#fff;padding:10px 16px;border-radius:4px;font:800 20px/1 'Saira Condensed';text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+section{padding:90px 0}
+h2{font:800 clamp(40px,5vw,64px)/.95 'Saira Condensed';text-transform:uppercase;margin:0 0 34px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.list{list-style:none;margin:0;padding:0}.list li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--ln)}
+.list b{font:800 26px/1.1 'Saira Condensed';text-transform:uppercase;min-width:220px}.list span{color:var(--mut)}
+.mob{background:var(--el);color:#fff;border-radius:6px;padding:40px}
+.mob h3{font:800 44px/.95 'Saira Condensed';text-transform:uppercase;margin:0 0 14px}
+.mob p{color:#dce6ff;margin:0 0 24px}
+.rate{display:flex;align-items:baseline;gap:18px;margin-top:40px}.rate b{font:800 96px/.8 'Saira Condensed';color:var(--el)}
+footer{background:var(--ink);color:#8590a6;font-size:14px;padding:28px 0 100px}
+.mbar{display:none}
+@media(max-width:860px){
+ .hero{height:auto;display:flex;flex-direction:column}#map{position:relative;height:300px;order:2}
+ .card{position:relative;left:0;top:0;transform:none;width:auto;border-radius:0;padding:30px 22px}.brand{display:none}
+ .split{grid-template-columns:1fr}.list li{flex-direction:column;gap:4px}.list b{min-width:0}
+ section{padding:60px 0}.mob{padding:30px 22px}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px;background:var(--ink);z-index:9}.mbar .btn{flex:1;text-align:center;font-size:18px}}
+</style></head><body>
+<div class="hero">
+ <div id="map" aria-label="Map showing 135 Gilmore Rd Queanbeyan"></div>
+ <div class="brand">City Centre Auto Electrical</div>
+ <div class="card"><div class="k">Auto electrician, Queanbeyan</div>
+  <h1>Car won't start? We come to you.</h1>
+  <p>Auto electrical work from our Queanbeyan workshop, or at your car anywhere across the Canberra region.</p>
+  <a class="btn v" href="tel:+61435651686">Call 0435 651 686</a>
+  <div class="addr"><b>Workshop</b><span>135 Gilmore Rd, Queanbeyan NSW</span><b>Mobile</b><span>Canberra and Queanbeyan region</span><b>Google</b><span>4.8 from 105 reviews</span></div>
+ </div>
+</div>
+
+<section><div class="wrap split">
+ <div><h2>What we sort out</h2>
+  <ul class="list">
+   <li><b>Flat or dying batteries</b><span>Tested and replaced if needed.</span></li>
+   <li><b>Starting problems</b><span>Starter motors, ignition and the clicks that ruin your morning.</span></li>
+   <li><b>Charging faults</b><span>Alternators and the warning light that won't go away.</span></li>
+   <li><b>Wiring and diagnostics</b><span>Electrical faults traced back to the cause.</span></li>
+  </ul></div>
+ <div><div class="mob"><h3>Stuck in a car park?</h3><p>If the car can't get to us, we can come to it. Call, tell us where you are and what the car is doing.</p><a class="btn v" href="tel:+61435651686">Call 0435 651 686</a></div>
+  <div class="rate"><b>4.8</b><div>from 105 Google reviews<br><a href="https://www.google.com/maps/place/City+Centre+Auto+Electrical/data=!4m7!3m6!1s0x6b164ebcad862dc3:0x13545eec6343ed27!8m2!3d-35.354397!4d149.207764!16s%2Fg%2F11hcw78ym0!19sChIJwy2GrbxOFmsRJ-1DY-xeVBM" style="font-weight:600">Read them on Google</a></div></div></div>
+</div></section>
+<footer><div class="wrap">City Centre Auto Electrical, 135 Gilmore Rd, Queanbeyan NSW<br>Demo built by Edward Bowman</div></footer>
+<div class="mbar"><a class="btn v" href="tel:+61435651686">Call 0435 651 686</a></div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>var w=innerWidth>860;sfMap('map',{lng:w?149.17:149.207764,lat:-35.354397,zoom:w?12:11.6,color:'#0a5cff',pin:true,pinLng:149.207764,pinLat:-35.354397});</script>
+</body></html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Mitchell Auto Centre | Mechanic, 22 Brookes St Mitchell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{--g:#0f6b3e;--g2:#e6f2ea;--amb:#f2a516;--ink:#10180f;--mut:#5b665c;--ln:#d8dfd8}
+*{box-sizing:border-box}body{margin:0;font:400 17px/1.6 'Public Sans',system-ui,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid var(--ln)}
+.brand{font:900 26px/1 'Big Shoulders Display';text-transform:uppercase;letter-spacing:.02em}
+.btn{display:inline-block;background:var(--g);color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:6px}
+.btn.alt{background:var(--amb);color:var(--ink)}
+.hero{padding:56px 0 40px}
+.hero .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
+.hero .num{font:900 clamp(120px,19vw,260px)/.78 'Big Shoulders Display';letter-spacing:-.02em;color:var(--g);margin:0}
+.num small{display:block;font-size:.2em;letter-spacing:.06em;color:var(--ink);margin-top:14px;text-transform:uppercase}
+h1{font:700 clamp(30px,3.4vw,44px)/1.1 'Public Sans';margin:28px 0 16px;letter-spacing:-.01em}
+.hero p{color:var(--mut);font-size:19px;max-width:32em;margin:0 0 26px}
+.board{background:var(--ink);color:#fff;border-radius:14px;padding:28px}
+.status{display:flex;align-items:center;gap:12px;font:900 34px/1 'Big Shoulders Display';text-transform:uppercase;margin-bottom:6px}
+.dot{width:16px;height:16px;border-radius:50%;background:#888}
+.open .dot{background:#38d27a;box-shadow:0 0 0 6px rgba(56,210,122,.2)}.closed .dot{background:var(--amb)}
+.sub{color:#b9c2b9;font-size:15px;margin-bottom:20px}
+.board table{width:100%;border-collapse:collapse;font-size:16px}.board td{padding:9px 0;border-top:1px solid #2b352a}.board td+td{text-align:right;font-variant-numeric:tabular-nums}
+.board tr.today td{color:var(--amb);font-weight:700}
+.strip{background:var(--g2);padding:22px 0;margin-top:40px}
+.strip .wrap{display:flex;gap:40px;flex-wrap:wrap;font-weight:700}
+.strip span{color:var(--g)}
+section{padding:90px 0}
+h2{font:900 clamp(44px,6vw,80px)/.9 'Big Shoulders Display';text-transform:uppercase;margin:0 0 36px}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--ink)}
+.svc div{padding:26px 22px 26px 0;border-right:1px solid var(--ln)}.svc div+div{padding-left:22px}.svc div:last-child{border-right:0}
+.svc h3{font:700 21px/1.2 'Public Sans';margin:0 0 8px}.svc p{margin:0;color:var(--mut);font-size:16px}
+.note{background:#fff8e6;border-left:6px solid var(--amb);padding:26px 28px;font-size:19px;max-width:820px}
+.find{display:grid;grid-template-columns:1fr 1.4fr;gap:44px;align-items:start}
+#map{height:440px;border-radius:14px;overflow:hidden}
+.big{font:900 64px/1 'Big Shoulders Display';margin:0}
+footer{border-top:1px solid var(--ln);color:var(--mut);font-size:14px;padding:26px 0 100px}
+.mbar{display:none}
+@media(max-width:860px){.hero .grid,.find{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}.svc div{padding:22px 14px!important;border-bottom:1px solid var(--ln)}
+ section{padding:60px 0}#map{height:320px}header .btn{display:none}
+ .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px;background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.12);z-index:9}.mbar .btn{flex:1;text-align:center;font-size:18px}}
+</style></head><body>
+<header><div class="wrap"><div class="brand">Mitchell Auto Centre</div><a class="btn" href="tel:+61262428733">Call (02) 6242 8733</a></div></header>
+<div class="hero"><div class="wrap grid">
+ <div><p class="num">4.9<small>from 116 Google reviews</small></p>
+  <h1>Your local mechanic on Brookes Street, Mitchell.</h1>
+  <p>Servicing and repairs for everyday cars, done in our own workshop in Mitchell. Call to book or ask a question.</p>
+  <a class="btn" href="tel:+61262428733">Call (02) 6242 8733</a></div>
+ <div class="board" id="board"><div class="status"><span class="dot"></span><span id="st">Opening hours</span></div><div class="sub" id="nx">Canberra time</div>
+  <table id="hrs"></table></div>
+</div></div>
+<div class="strip"><div class="wrap"><div><span>Where</span> 22 Brookes St, Mitchell</div><div><span>Phone</span> (02) 6242 8733</div><div><span>Hours</span> Weekdays 8am to 5:30pm</div></div></div>
+
+<section><div class="wrap">
+ <h2>Bring it to Mitchell</h2>
+ <div class="svc">
+  <div><h3>Servicing</h3><p>Regular servicing to keep the car running right and catch problems early.</p></div>
+  <div><h3>Repairs</h3><p>Noises, leaks, warning lights. We find the cause and fix it.</p></div>
+  <div><h3>Brakes and suspension</h3><p>Squeal, pull or a soft pedal? Get it checked before it gets worse.</p></div>
+  <div><h3>Not sure?</h3><p>Call and describe what the car is doing. We will tell you what to do next.</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="note"><b>Drop off on your way to work.</b> We open at 8am on weekdays and run until 5:30pm, so you can leave the car in the morning and collect it on the way home. Call ahead so we can plan the day.</div></div></section>
+
+<section style="background:#f6f8f6"><div class="wrap find">
+ <div><h2 style="margin-bottom:18px">Find us</h2><p class="big">22 Brookes St</p><p style="font-size:20px;margin:6px 0 24px">Mitchell ACT 2911</p>
+  <a class="btn alt" href="https://www.google.com/maps/place/Mitchell+Auto+Centre/data=!4m7!3m6!1s0x6b16530e518942ff:0x378830d415896081!8m2!3d-35.2191324!4d149.141838!16s%2Fg%2F1wrgk9pz!19sChIJ_0KJUQ5TFmsRgWCJFdQwiDc">Directions and reviews on Google</a></div>
+ <div id="map" aria-label="Map showing 22 Brookes St Mitchell"></div>
+</div></section>
+<footer><div class="wrap">Mitchell Auto Centre, 22 Brookes St, Mitchell ACT<br>Demo built by Edward Bowman</div></footer>
+<div class="mbar"><a class="btn" href="tel:+61262428733">Call (02) 6242 8733</a></div>
+<script>
+(function(){var H=[null,[8,17.5],[8,17.5],[8,17.5],[8,17.5],[8,17.5],null];var N=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var p=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Sydney',weekday:'long',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};var d=N.indexOf(g('weekday'));var h=+g('hour')%24+(+g('minute'))/60;
+var t='';[1,2,3,4,5,6,0].forEach(function(i){t+='<tr'+(i===d?' class="today"':'')+'><td>'+N[i]+'</td><td>'+(H[i]?'8am to 5:30pm':'Closed')+'</td></tr>'});document.getElementById('hrs').innerHTML=t;
+var b=document.getElementById('board'),o=H[d]&&h>=H[d][0]&&h<H[d][1];b.classList.add(o?'open':'closed');
+document.getElementById('st').textContent=o?'Open now':'Closed now';
+var nx='';if(o){nx='Closes 5:30pm today';}else{for(var k=0;k<8;k++){var j=(d+k)%7;if(H[j]&&(k>0||h<H[j][0])){nx='Opens 8am '+(k===0?'today':k===1?'tomorrow':N[j]);break;}}}
+document.getElementById('nx').textContent=nx+'. Canberra time.';})();
+</script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><script src="../assets/map.js"></script>
+<script>sfMap('map',{lng:149.141838,lat:-35.2191324,zoom:14.3,color:'#0f6b3e',pin:true});</script>
+</body></html>
